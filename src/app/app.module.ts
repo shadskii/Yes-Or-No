@@ -1,16 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CardstackComponent } from './cardstack/cardstack.component';
+import { SwingModule } from 'angular2-swing';
+import { CardService } from './card.service';
+import { MatCardModule, MatToolbarModule, MatGridListModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardstackComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    SwingModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatGridListModule
   ],
-  providers: [],
+  providers: [CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

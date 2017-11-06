@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+.content{
+  width: 70%;
+  margin:0 auto;
+}
+.content-half{
+  display:inline-block;
+  width: 35%;
+  /*margin:0 auto;*/
+}
