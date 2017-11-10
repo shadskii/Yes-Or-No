@@ -7,13 +7,9 @@
 #viewport {
   height: 100vh;
   width: 100vh;
-  /* margin: auto; */
-  /* display: block; */
 }
 .stack {
     background: #ED5D52;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
     display: inline-block;
     text-align: center;
   }
