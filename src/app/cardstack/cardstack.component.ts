@@ -10,20 +10,21 @@ import {
   SwingCardComponent
 } from 'angular2-swing';
 import { CardService } from '../card.service';
+import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-cardstack',
   templateUrl: './cardstack.component.html',
   styleUrls: ['./cardstack.component.css']
 })
-export class CardstackComponent {
+export class CardstackComponent implements AfterViewInit {
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
 
   cards: Array<any>;
   stackConfig: StackConfig;
-  swipedRight: number = 0;
-  swipedLeft: number = 0;
+  swipedRight: 0;
+  swipedLeft: 0;
 
   constructor(private cardService: CardService) {
     this.cardService.getCards().subscribe(res => this.cards = res);
@@ -38,7 +39,7 @@ export class CardstackComponent {
 
         return Math.max(xConfidence, yConfidence);
       },
-      minThrowOutDistance: 400
+      minThrowOutDistance: 300
     };
   }
 
@@ -56,7 +57,7 @@ export class CardstackComponent {
     // this is how you can manually hook up to the
     // events instead of providing the event method in the template
     this.swingStack.throwoutleft.subscribe(
-      (event: ThrowEvent) => console.log('Manual hook: ', event));
+      (event: ThrowEvent) => event.target.remove());
 
   }
 
@@ -64,7 +65,7 @@ export class CardstackComponent {
   // on the HTML element - see the template above
   onThrowOut(event: ThrowEvent) {
     console.log('Hook from the template', event.throwDirection);
-    if(event.throwDirection === Direction.RIGHT){
+    if (event.throwDirection === Direction.RIGHT) {
       this.swipedRight++;
     }
   }
