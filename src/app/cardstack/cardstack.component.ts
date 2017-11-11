@@ -44,33 +44,16 @@ export class CardstackComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.swingStack);
-    console.log(this.swingCards);
-    // we can get the underlying stack
-    // which has methods - createCard, destroyCard, getCard etc
-    console.log(this.swingStack.stack);
-
-    // and the cards
-    // every card has methods - destroy, throwIn, throwOut etc
-    this.swingCards.forEach((c) => console.log(c.getCard()));
-
-    // this is how you can manually hook up to the
-    // events instead of providing the event method in the template
     this.swingStack.throwoutleft.subscribe(
-      (event: ThrowEvent) => event.target.remove());
+      (event: ThrowEvent) => {
+        event.target.remove();
+        this.swipedLeft++;
+      });
 
     this.swingStack.throwoutright.subscribe(
-      (event: ThrowEvent) => event.target.remove());
-  }
-
-  // This method is called by hooking up the event
-  // on the HTML element - see the template above
-  onThrowOut(event: ThrowEvent) {
-    console.log('Hook from the template', event.throwDirection);
-    if (event.throwDirection === Direction.RIGHT) {
-      this.swipedRight++;
-    } else if (event.throwDirection === Direction.LEFT) {
-      this.swipedLeft++;
-    }
+      (event: ThrowEvent) => {
+        event.target.remove();
+        this.swipedRight++;
+      });
   }
 }
