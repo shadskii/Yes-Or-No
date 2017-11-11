@@ -23,8 +23,8 @@ export class CardstackComponent implements AfterViewInit {
 
   cards: Array<any>;
   stackConfig: StackConfig;
-  swipedRight: 0;
-  swipedLeft: 0;
+  swipedRight: number = 0;
+  swipedLeft: number = 0;
 
   constructor(private cardService: CardService) {
     this.cardService.getCards().subscribe(res => this.cards = res);
@@ -39,7 +39,7 @@ export class CardstackComponent implements AfterViewInit {
 
         return Math.max(xConfidence, yConfidence);
       },
-      minThrowOutDistance: 300
+      minThrowOutDistance: 100
     };
   }
 
@@ -59,6 +59,8 @@ export class CardstackComponent implements AfterViewInit {
     this.swingStack.throwoutleft.subscribe(
       (event: ThrowEvent) => event.target.remove());
 
+    this.swingStack.throwoutright.subscribe(
+      (event: ThrowEvent) => event.target.remove());
   }
 
   // This method is called by hooking up the event
@@ -67,6 +69,8 @@ export class CardstackComponent implements AfterViewInit {
     console.log('Hook from the template', event.throwDirection);
     if (event.throwDirection === Direction.RIGHT) {
       this.swipedRight++;
+    } else if (event.throwDirection === Direction.LEFT) {
+      this.swipedLeft++;
     }
   }
 }
