@@ -1,28 +1,31 @@
 
 .image{
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 #viewport {
-  height: 100vh;
-  width: 100vh;
+
 }
 .stack {
-    background: #ED5D52;
-    display: inline-block;
-    text-align: center;
+  height: 100%;
+  width: 80%;
+  
+  /* margin-left: 0 auto; */
+  /* background: #ED5D52; */
+    /* display: inline-block; */
+    /* text-align: center; */
   }
 .card {
-    width: 200px;
-    height: 300px;
+    width: 50%;
+    height: 60%;
     list-style: none;
     background: #fff;
     border-radius: 5px;
     text-align: center;
     position: absolute;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
-    line-height: 300px;
+    line-height: 15em;
     cursor: default;
   }
 #viewport li.in-deck:nth-child(3) {
