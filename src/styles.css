@@ -1,11 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+/* @import "~bootstrap/dist/css/bootstrap.min.css"; */
+@import "~font-awesome/css/font-awesome.css";
 .content{
+  padding-top: 3em;
+  padding-bottom: 3em;
   width: 70%;
   margin:0 auto;
 }
+body{
+  margin:0 auto;
+  width: 100%;
+  min-height: 100vh !important;
+  height: 100vh;
+}
 .content-half{
-  display:inline-block;
   width: 35%;
-  /*margin:0 auto;*/
 }
