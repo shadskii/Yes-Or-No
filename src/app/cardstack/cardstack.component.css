@@ -12,18 +12,20 @@
   margin: 0 auto;
   position: relative;
   padding-top: 1em;
-  /* height: 90vh; */
   padding-left: 1em !important;
   padding-right: 1em !important;
-  /* padding-bottom: 30em; */
-  
 }
-.card {
+.mycard {
     width: calc(100% - 2em);
+    height: 80vh;
     text-align: center;
     position: fixed;
     cursor: default;
 }
 .inner-card{
   height: 100%;
+  border-radius: 1.5em;
+}
+.rad{
+  border-radius: 1.5em;
 }

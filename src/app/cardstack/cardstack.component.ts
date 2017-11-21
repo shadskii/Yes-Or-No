@@ -38,7 +38,7 @@ export class CardstackComponent implements AfterViewInit {
 
         return Math.max(xConfidence, yConfidence);
       },
-      minThrowOutDistance: 50
+      minThrowOutDistance: 10
     };
   }
 

@@ -1,7 +1,7 @@
 <div class="">
   <div swing-stack class="stack" [stackConfig]="stackConfig" #myswing1>
-    <div swing-card class="card" prepend="true" *ngFor="let c of (cards ? cards.slice(0,50) : [])">
-      <mat-card class="inner-card">
+    <div swing-card class="mycard" prepend="true" *ngFor="let c of (cards ? cards.slice(0,50) : [])">
+      <mat-card class="inner-card" tabindex="0">
         <mat-card-header>
           <mat-card-title>{{c.title}}</mat-card-title>
         </mat-card-header>
