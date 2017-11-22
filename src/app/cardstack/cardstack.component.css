@@ -17,15 +17,16 @@
 }
 .mycard {
     width: calc(100% - 2em);
-    height: 80vh;
+    height: 70vh;
     text-align: center;
     position: fixed;
     cursor: default;
 }
 .inner-card{
-  height: 100%;
+  height: 70vh;
   border-radius: 1.5em;
 }
 .rad{
   border-radius: 1.5em;
+  max-height: 50vh;
 }

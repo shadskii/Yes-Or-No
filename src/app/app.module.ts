@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CardstackComponent } from './cardstack/cardstack.component';
 import { SwingModule } from 'angular2-swing';
 import { CardService } from './card.service';
-import { MatCardModule, MatToolbarModule, MatGridListModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatToolbarModule, MatGridListModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { MatCardModule, MatToolbarModule, MatGridListModule, MatIconModule } fro
     MatCardModule,
     MatToolbarModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [CardService],
   bootstrap: [AppComponent]

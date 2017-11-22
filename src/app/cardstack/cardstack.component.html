@@ -2,17 +2,24 @@
   <div swing-stack class="stack" [stackConfig]="stackConfig" #myswing1>
     <div swing-card class="mycard" prepend="true" *ngFor="let c of (cards ? cards.slice(0,50) : [])">
       <mat-card class="inner-card" tabindex="0">
-        <mat-card-header>
-          <mat-card-title>{{c.title}}</mat-card-title>
-        </mat-card-header>
-        <img class="" mat-card-image src="{{ c.url }}">
+        <img class="rad" mat-card-image src="{{ c.url }}">
         <mat-card-content>
           <p>{{c.id}}</p>
         </mat-card-content>
+        <mat-card-actions>
+          <span>
+            <button mat-icon-button color="primary">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </span>
+          <button mat-icon-button color="primary">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>
-</div>
+</div> 
 <div class="foot">
   <mat-card>
     <mat-card-content>
